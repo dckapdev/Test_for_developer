@@ -1,0 +1,22 @@
+<h1>Listing task_entries</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @task_entries.each do |task_entry| %>
+  <tr>
+    <td><b><%= task_entry.task_name %></b></td>
+    <td><%= link_to 'Show', task_entry %></td>
+    <td><%= link_to 'Edit', edit_task_entry_path(task_entry) %></td>
+    <td><%= link_to 'Destroy', task_entry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task entry', new_task_entry_path %> &nbsp;&nbsp; <%= link_to 'Pending Tasks', pending_tasks_task_entries_path() %>
